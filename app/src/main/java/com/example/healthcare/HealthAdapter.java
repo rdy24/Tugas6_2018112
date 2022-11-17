@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class HealthAdapter extends RecyclerView.Adapter<HealthAdapter.HealthViewHolder> {
     String data1[], data2[];
     int images[];
-    NewsFragment context;
+    NewsActivity context;
 
-    public HealthAdapter(NewsFragment ct, String[] s1, String[] s2, int[] img){
+    public HealthAdapter(NewsActivity ct, String[] s1, String[] s2, int[] img){
         context = ct;
         data1 = s1;
         data2 = s2;

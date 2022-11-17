@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class TrendingAdapter extends RecyclerView.Adapter<TrendingAdapter.TrendingViewHolder> {
     String data1[];
     int images[];
-    NewsFragment context;
+    NewsActivity context;
 
-    public TrendingAdapter(NewsFragment ct, String[] s1, int[] img){
+    public TrendingAdapter(NewsActivity ct, String[] s1, int[] img){
         context = ct;
         data1 = s1;
         images = img;

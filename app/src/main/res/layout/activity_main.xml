@@ -24,10 +24,47 @@
 
             android:theme="@style/ThemeOverlay.AppCompat.DayNight"
             app:popupTheme="@style/Theme.AppCompat.Light" />
-        <FrameLayout
-            android:id="@+id/fragment_container"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextClock
+                android:id="@+id/selectedTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:format12Hour="h:mm"
+                android:inputType="time"
+                android:text="08:45"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="46sp" />
+
+            <Button
+                android:id="@+id/selectedTimeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginTop="36dp"
+                android:text="Select Time"
+                android:textSize="26sp"/>
+            <Button
+                android:id="@+id/setAlarmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginHorizontal="26dp"
+                android:text="Set Alarm"
+                android:textSize="26dp"/>
+            <Button
+                android:id="@+id/cancelAlarmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginHorizontal="26dp"
+                android:text="Cancel Alarm"
+                android:textSize="26dp"/>
+        </LinearLayout>
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
