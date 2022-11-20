@@ -15,7 +15,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             NewsActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
             Intent.FLAG_ACTIVITY_CLEAR_TASK);
-    //builder yang akan membuat notifikasi tampil
     PendingIntent pendingIntent =
             PendingIntent.getActivity(context, 0, i, 0);
     NotificationCompat.Builder builder = new

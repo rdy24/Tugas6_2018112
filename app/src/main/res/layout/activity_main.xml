@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:openDrawer="start"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
@@ -19,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
-            android:background="@color/design_default_color_primary"
+            android:background="@color/blue"
             android:elevation="4dp"
 
             android:theme="@style/ThemeOverlay.AppCompat.DayNight"
@@ -28,14 +27,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextClock
                 android:id="@+id/selectedTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200dp"
-                android:format12Hour="h:mm"
-                android:inputType="time"
-                android:text="08:45"
+                android:format12Hour="hh : mm a"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="46sp" />

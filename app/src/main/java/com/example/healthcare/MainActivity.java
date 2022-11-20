@@ -116,16 +116,20 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void setAlarm() {
-    alarmManager = (AlarmManager)
-            getSystemService(Context.ALARM_SERVICE);
-    Intent intent = new Intent(this, AlarmReceiver.class);
-    pendingIntent = PendingIntent.getBroadcast(this, 0,
-            intent, 0);
-    alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,
-            calendar.getTimeInMillis(),
-            AlarmManager.INTERVAL_DAY, pendingIntent);
-    Toast.makeText(this, "Alarm Set Successfully",
-            Toast.LENGTH_SHORT).show();
+    try {
+      alarmManager = (AlarmManager)
+              getSystemService(Context.ALARM_SERVICE);
+      Intent intent = new Intent(this, AlarmReceiver.class);
+      pendingIntent = PendingIntent.getBroadcast(this, 0,
+              intent, 0);
+      alarmManager.setExact(AlarmManager.RTC_WAKEUP,
+              calendar.getTimeInMillis(), pendingIntent);
+      Toast.makeText(this, "Alarm Set",
+              Toast.LENGTH_SHORT).show();
+    } catch (Exception e) {
+      Toast.makeText(this, "Alarm Not Set",
+              Toast.LENGTH_SHORT).show();
+    }
   }
 
   private void showTimePicker() {
@@ -145,8 +149,8 @@ public class MainActivity extends AppCompatActivity {
                           picker.getHour(), picker.getMinute())
           );
         } else {
-          binding.selectedTime.setText(picker.getHour()
-                  + " : " + picker.getMinute() + " ");
+          binding.selectedTime.setText("0"+ picker.getHour()
+                  + " : " + "0"+ picker.getMinute());
         }
         calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY,
